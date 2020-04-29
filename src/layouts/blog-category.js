@@ -1,5 +1,6 @@
 import React from "react"
 import kebabCase from "lodash.kebabcase"
+import styled from "styled-components"
 import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -13,15 +14,15 @@ const BlogCategory = ({ data, pageContext }) => {
 
   return (
     <Layout>
+      <Seo title={category} />
       <div className="container">
-        <Seo title={category} />
+        <Title>Categorias:</Title>
 
-        <p>Categorias:</p>
-        <div>
+        <AllTags>
           {allCategories.map(cat => (
-            <Link to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
+            <Tag to={`/blog/category/${kebabCase(cat)}`}>{cat}</Tag>
           ))}
-        </div>
+        </AllTags>
 
         {allMarkdownRemark.edges.map(renderList)}
 
@@ -66,5 +67,24 @@ export const query = graphql`
         }
       }
     }
+  }
+`
+
+const Title = styled.h2`
+  font-size: 42px;
+  text-align: center;
+`
+const AllTags = styled.div`
+  margin: 50px 0;
+`
+const Tag = styled(Link)`
+  background: #000;
+  color: #fff;
+  padding: 2px 5px;
+  margin: 0px 5px;
+  border-radius: 3px;
+  &:hover {
+    color: #fff;
+    background: #919191;
   }
 `
