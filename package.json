@@ -2,7 +2,7 @@
   "name": "gatsby-advanced-blog-system",
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Danilo Woznica <danilowoz@gmail.com>",
+  "author": "Dyego Soriano",
   "dependencies": {
     "@reach/router": "^1.2.1",
     "babel-plugin-styled-components": "^1.10.0",
@@ -10,20 +10,19 @@
     "gatsby-image": "^2.0.34",
     "gatsby-plugin-manifest": "^2.0.24",
     "gatsby-plugin-offline": "^2.0.25",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.0.10",
     "gatsby-plugin-sharp": "^2.0.30",
+    "gatsby-plugin-sitemap": "^2.2.27",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-filesystem": "^2.0.32",
     "gatsby-transformer-sharp": "^2.1.17",
-    "griding": "^0.2.2",
     "lodash.kebabcase": "^4.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
-    "styled-components": "^4.2.0",
-    "typography": "^0.16.19",
-    "typography-theme-moraga": "^0.16.19"
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "gatsby-remark-images": "^3.0.10",
@@ -36,13 +35,12 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "now-build": "npm run build",
+    "clean": "gatsby clean",
     "develop": "gatsby develop",
-    "dev": "npm run develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
     "type": "git",
