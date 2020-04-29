@@ -56,11 +56,6 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
-
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-  }
 `
 
 Layout.propTypes = { children: PropTypes.node.isRequired }
