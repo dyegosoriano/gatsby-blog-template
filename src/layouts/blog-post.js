@@ -17,7 +17,6 @@ const BlogPost = ({ data, pageContext }) => {
     <Layout>
       <Seo title={markdownRemark.frontmatter.title} />
       <div className="container">
-
         <BoxCenter>
           {markdownRemark.frontmatter.category.map((cat, index, arr) => (
             <ConcatWords arrCount={arr.length} index={index} key={cat}>
@@ -31,7 +30,11 @@ const BlogPost = ({ data, pageContext }) => {
         <BoxCenter>
           <Author>
             autor{" "}
-            <Link to={`/blog/author/${kebabCase(markdownRemark.frontmatter.author)}`}>
+            <Link
+              to={`/blog/author/${kebabCase(
+                markdownRemark.frontmatter.author
+              )}`}
+            >
               {markdownRemark.frontmatter.author}
             </Link>
           </Author>
@@ -45,13 +48,19 @@ const BlogPost = ({ data, pageContext }) => {
         <BoxSpaceAround>
           {prev && (
             <Link to={prev.node.fields.slug}>
-              <div>{" "}{"<"} {prev.node.frontmatter.title}</div>
+              <div>
+                {" "}
+                {"<"} {prev.node.frontmatter.title}
+              </div>
             </Link>
           )}
 
           {next && (
             <Link to={next.node.fields.slug}>
-              <div>{" "}{next.node.frontmatter.title} {">"}</div>
+              <div>
+                {" "}
+                {next.node.frontmatter.title} {">"}
+              </div>
             </Link>
           )}
         </BoxSpaceAround>
@@ -73,7 +82,7 @@ export const query = graphql`
         category
         image {
           childImageSharp {
-            fluid {
+            fluid(maxHeight: 600, maxWidth: 960) {
               src
             }
           }
@@ -85,11 +94,11 @@ export const query = graphql`
 
 const Tag = styled(Link)`
   background: #000;
-  color: #FFF;
+  color: #fff;
   padding: 2px 5px;
   margin: 0px 5px;
   &:hover {
-    color: #FFF;
+    color: #fff;
     background: #919191;
   }
 `
@@ -122,14 +131,14 @@ const Text = styled.div`
     text-align: justify;
     line-height: 1.9rem;
     margin-bottom: 25px;
-    &:first-of-type::first-letter{
+    &:first-of-type::first-letter {
       float: left;
       font-size: 4rem;
       line-height: 2.5rem;
       padding: 10px 10px 0px 0px;
     }
   }
-`;
+`
 
 const BoxCenter = styled.div`
   display: flex;
