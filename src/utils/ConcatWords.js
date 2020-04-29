@@ -9,14 +9,14 @@ export default ({ arrCount, index, children }) => {
     return <>{children}, </>
   }
 
-  if (index + 1 === arrCount) {
-    return (
-      <>
-        {" "}
-        {"&"} {children}
-      </>
-    )
-  }
+  // if (index + 1 === arrCount) {
+  //   return (
+  //     <>
+  //       {" "}
+  //       {"&"} {children}
+  //     </>
+  //   )
+  // }
 
   return <>{children}</>
 }
