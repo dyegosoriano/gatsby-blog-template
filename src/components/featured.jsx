@@ -76,6 +76,7 @@ const Features = styled.article`
   margin-bottom: 150px;
 `
 const Title = styled.h1`
+  font-weight:bold;
   font-size:3rem;
   text-align:center;
 `
