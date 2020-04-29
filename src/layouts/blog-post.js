@@ -97,36 +97,32 @@ const Tag = styled(Link)`
   color: #fff;
   padding: 2px 5px;
   margin: 0px 5px;
+  border-radius:3px;
   &:hover {
     color: #fff;
     background: #919191;
   }
 `
-
 const Title = styled.h1`
-  font-size: 44px;
+  font-size: 4rem;
   text-align: center;
+  font-weight:bold;
 `
-
 const Author = styled.span`
   widows: 100%;
   color: #919191;
+  font-size:1rem;
 `
-
 const Time = styled.time`
+  font-size:1rem;
   margin-left: 20px;
   color: #919191;
 `
-
 const Banner = styled.img`
-  margin: 50px 0;
+  margin: 0 0 50px 0;
 `
-
 const Text = styled.div`
   margin-bottom: 50px;
-  h2 {
-    margin-bottom: 30px;
-  }
   p {
     text-align: justify;
     line-height: 1.9rem;
@@ -139,13 +135,11 @@ const Text = styled.div`
     }
   }
 `
-
 const BoxCenter = styled.div`
   display: flex;
   justify-content: center;
   padding: 10px 0;
 `
-
 const BoxSpaceAround = styled.div`
   width: 100%;
   display: flex;
